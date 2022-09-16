@@ -1,0 +1,9 @@
+.game{
+    opacity: 1;
+    transition: 500ms;
+    transition-timing-function: ease-in;
+}
+
+.hidden-game{
+    opacity: 0;
+}
