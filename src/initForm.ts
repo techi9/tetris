@@ -9,20 +9,27 @@ export default function initForm(onInit: () => void){
     let button: HTMLElement | null = document.getElementById('start_button')
     button?.addEventListener('click', (e) => {
         e.preventDefault()
-        storeName()
-        animate(onInit)
-        showGame()
+        if(storeName()){
+            animate(onInit)
+            showGame()
+        }
+
         console.log('start pressed')
     })
 }
 
-function storeName(){
-    let textArea : Element | null = document.getElementById('input_field')
-    localStorage[]
+function storeName(): boolean{
+    let textArea : HTMLInputElement | null = document.getElementById('input_field') as HTMLInputElement
+    let text = textArea.value
+
+    //TODO shake if wrong text
+    
+    return !!text.length;
+
 }
 
 function animate(after: () => void){
-    let welcomeScreen: Element | null = document.getElementsByClassName('welcome').item(0)
+    let welcomeScreen: Element | null = document.querySelector('.welcome')
     console.log(welcomeScreen)
     welcomeScreen?.classList.add('hidden')
     welcomeScreen?.addEventListener('transitionend', ()=>{

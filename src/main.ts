@@ -1,5 +1,5 @@
 import initForm from './initForm'
-import initGame from './game/game'
+import initGame from './gameLogic/game'
 
 import './style.css'
 import './welcome.css'
@@ -17,9 +17,25 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     </form>
   </div>
   
-  <div class="game hidden-game">
+  <div class="game hidden-game"> 
   
-    Game
+    <div class="game-info">
+        <section class="name"> User: <div class="value"> 0 </div></section>
+        <section class="level"> Level: <div class="value"> 0 </div></section>
+        <section class="score"> Score: <div class="value"> 0 </div></section>
+    </div>
+    
+    <div class="game-container">
+        <h1>Tetris</h1>
+        <div class="game-board">
+            <canvas id="game-canvas" width="200" height="400"/>
+        </div>
+    </div>
+    
+    <div class="next-piece">
+        <h2> Next piece </h2>
+        <canvas id="next-piece-canvas" width="100" height="100"/>
+    </div>
   
   </div>
 `

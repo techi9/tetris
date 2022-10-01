@@ -2,8 +2,51 @@
     opacity: 1;
     transition: 500ms;
     transition-timing-function: ease-in;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    gap: 4em;
+}
+
+.game > .game-info, .next-piece {
+    border-radius: 10px;
+    border: #1a1a1a solid 2px;
+}
+
+.game-info{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 2vh;
+    /*width: 30vw;*/
+
+
+    padding: 1vh 3rem 1vh 3rem;
+}
+
+.game-info section{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+}
+
+.next-piece{
+    padding: 0vh 1vh 0vh 1vh
 }
 
 .hidden-game{
     opacity: 0;
 }
+
+.game-container{
+    margin-top: -12vh;
+}
+
+.game-board{
+    border-radius: 10px;
+    border: #1a1a1a solid 2px;
+}
+
+
