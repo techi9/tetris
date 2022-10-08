@@ -1,10 +1,12 @@
 export default class Cell{
 
     private occupied: boolean = false;
-    private color: string = 'cyan'
+    private readonly color: string = 'cyan'
+    private pos: [number, number] = [0, 0];
 
-    constructor(){ //TODO: add set width and height
-
+    constructor(pos: [number,number], color:string){
+            this.color = color
+            this.pos = pos
     }
 
     isOccupied(): boolean{
@@ -17,7 +19,6 @@ export default class Cell{
 
     render(context: CanvasRenderingContext2D, x: number, y: number, size: number){
         context.fillStyle = this.color
-        context.fillRect(x, y, size, size)
+        context.fillRect(x + this.pos[0], y + this.pos[1], size, size) //TODO: take size into account somewhere
     }
-
 }
